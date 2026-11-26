@@ -14,23 +14,27 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
 html,body{margin:0;height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none}
-body{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;gap:5vmin;flex-wrap:wrap;
+body{position:fixed;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:4vmin;align-content:center;justify-items:stretch;
   padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
   background:radial-gradient(circle at 20% 10%,#fff6c9,#ffe0f0 70%);font-family:"Arial Rounded MT Bold","Nunito","Geeza Pro","Noto Naskh Arabic",system-ui,sans-serif}
-a{flex:1 1 260px;max-width:380px;min-height:min(40dvh,260px);border-radius:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-  color:#fff;text-decoration:none;box-shadow:0 12px 0 rgba(0,0,0,.15);transition:transform .1s}
+a{min-height:min(38dvh,240px);border-radius:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  color:#fff;text-decoration:none;box-shadow:0 10px 0 rgba(0,0,0,.15);transition:transform .1s}
 a:active{transform:translateY(8px);box-shadow:0 4px 0 rgba(0,0,0,.15)}
 .en{background:linear-gradient(160deg,#74c0fc,#339af0)}
 .ar{background:linear-gradient(160deg,#8ce99a,#40c057)}
-.big{font-size:clamp(64px,16vmin,120px);font-weight:900;line-height:1.2;text-shadow:0 5px 0 rgba(0,0,0,.12)}
-.lb{font-size:24px;font-weight:800}
-@media (orientation:portrait) and (max-width:600px){ body{flex-direction:column;flex-wrap:nowrap} a{flex:1 1 0;width:100%;max-width:none;min-height:0;max-height:300px} }
-@media (orientation:landscape) and (max-height:520px){ body{flex-wrap:nowrap} a{min-height:70dvh} }
+.wen{background:linear-gradient(160deg,#ffc078,#ffa94d 60%,#fd7e14)}
+.war{background:linear-gradient(160deg,#e599f7,#be4bdb 60%,#9c36b5)}
+.big{font-size:clamp(40px,11vmin,88px);font-weight:900;line-height:1.2;text-shadow:0 5px 0 rgba(0,0,0,.12)}
+.lb{font-size:22px;font-weight:800}
+@media (orientation:portrait) and (max-width:600px){ a{min-height:0;height:100%;max-height:none} body{grid-auto-rows:1fr;align-content:stretch} }
+@media (orientation:landscape) and (max-height:520px){ body{align-content:stretch;grid-auto-rows:1fr;height:100%;height:100dvh} a{min-height:0;height:100%;max-height:none} .big{font-size:clamp(28px,12dvh,56px)} .lb{font-size:18px} }
 </style>
 </head>
 <body>
 <a class="en" href="abc-letters.html"><div class="big">ABC</div><div class="lb">English</div></a>
 <a class="ar" href="arabic-letters.html" lang="ar" dir="rtl"><div class="big">أ ب</div><div class="lb">عربي</div></a>
+<a class="wen" href="picture-words.html#en"><div class="big">🐱🍎</div><div class="lb">Pictures</div></a>
+<a class="war" href="picture-words.html#ar" lang="ar" dir="rtl"><div class="big">🐱🍎</div><div class="lb">كلمات</div></a>
 <script>document.addEventListener("gesturestart",function(e){e.preventDefault();});</script>
 </body>
 </html>
